@@ -1,0 +1,29 @@
+<div class="studentapp">
+<p> Welcome to student Details</p>
+<hr>
+<button type="button" (click)="addStudent()">Add Student</button> |
+<input type="button" value="Delete all Students" (click)="deleteAllStudents()">  |
+  <input type="button" value="Update Student" (click)="updateStudent()">  |
+<hr>
+<div class="studentapp">
+  
+  <input type="text" value="" placeholder="enter id" readonly [(ngModel)]=student.id><br><br/>
+  <input type="text" value="" placeholder="enter firstname" [(ngModel)]=student.firstname><br><br/>
+  <input type="text" value="" placeholder="enter lastname" [(ngModel)]=student.lastname><br><br/>
+  <input type="text" value="" placeholder="enter email" [(ngModel)]=student.email><br><br/>
+  <input type="text" value="" placeholder="enter phone" [(ngModel)]=student.phone><br><br/>
+   
+  
+</div>
+  
+  <div class="studentapp">
+    <div *ngFor="let s of students">
+      
+        {{s.id}} | {{s.firstname}} | {{s.lastname}} |{{s.email}} | {{s.phone}}
+        <input type="button" (click)="deleteStudent(s.id)" value="Delete student">
+        <input type="button" (click)="selectStudent(s)" value="Select student">
+      </div>
+    </div>
+  </div>  
+
+
