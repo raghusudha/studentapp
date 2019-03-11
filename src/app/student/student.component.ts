@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-student',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   student:any;
   students;
 
@@ -30,8 +32,8 @@ export class StudentComponent implements OnInit {
   }
     addStudent(){
       if(this.student.id==0){
-        this.student.id=Math.round(Math.random()*10000000);
-      }
+      this.student.id=Math.round(Math.random()*10000000);
+    }
  this.students.push(this.student);
   this.resetStudent();
   
@@ -69,7 +71,9 @@ export class StudentComponent implements OnInit {
   selectStudent(student){
     this.student=student;
   }
-  
+  onLogout():void{
+    this.router.navigate(['/login']);
+  }
     
        }
        

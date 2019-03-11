@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StudentComponent } from './student/student.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -8,8 +9,12 @@ const routes: Routes = [
     component:StudentComponent
   },
   {
+    path:"login",
+    component:LoginComponent
+  },
+  {
     path:"",
-    redirectTo:"student",
+    redirectTo:"login",
     pathMatch:"full"
   }
 
